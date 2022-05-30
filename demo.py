@@ -1,4 +1,3 @@
-from cgitb import enable
 import json
 
 import Python2ZabbixApi # class for manipulate zabbix hosts through api calls
@@ -37,9 +36,10 @@ sethg=zbxi.SetHostGroup(hostid, hostgroupid, token)
 print(sethg)
 
 # disable host
-#disablehost=zbxi.DisableHost(hostid, token)
-#print(disablehost)
+disablehost=zbxi.DisableHost(hostid, token)
+print(disablehost)
 
 # enable host
 enablehost=zbxi.EnableHost(hostid, token)
+print(disablehost)
 
