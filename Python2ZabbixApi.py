@@ -39,3 +39,11 @@ class InitApi:
         data = '{"jsonrpc": "2.0", "method": "hostgroup.massadd", "params": { "groups": { "groupid": "'+hostgroupid+'" }, "hosts": { "hostid": "'+hostid+'" } }, "auth": "'+token+'", "id": 1 }'
         resp = requests.post(self.target, headers=headers, data=data)
         return resp.content
+    def DisableHost(self, hostid, token):
+        data = '{"jsonrpc": "2.0", "method": "host.update", "params": { "hostid": "'+hostid+'", "status": 1 }, "auth": "'+token+'", "id": 1 }'
+        resp = requests.post(self.target, headers=headers, data=data)
+        return resp.content
+    def EnableHost(self, hostid, token):
+        data = '{"jsonrpc": "2.0", "method": "host.update", "params": { "hostid": "'+hostid+'", "status": 0 }, "auth": "'+token+'", "id": 1 }'
+        resp = requests.post(self.target, headers=headers, data=data)
+        return resp.content
